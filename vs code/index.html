@@ -7,70 +7,100 @@
 
 <style>
 
-body {
+* {
+    margin: 10px;
+    
+}
+    body {
 
 
-background-color: rgb(117, 117, 224);
-text-align: center;
-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
+    background-color: rgb(46, 1, 1);
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+
+
 
 }
 
-
-section {
+    section {
 
 background-color: aliceblue;
 padding: 50px;
 border-radius: 90px;
 box-shadow: 0 50px 70px;
+}
 
+    h1 {
 
+    font-size: 10px;
+}
 
+    button{
+    padding: 20px 50px;
+    font-size: 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 
+}
+
+    button.positive {
+    background-color: rgb(122, 124, 121);
+}
+
+    button.positive:hover {
+    background-color: rgb(6, 255, 18);
 }
 
 
 
+    button.negative {
+    background-color: rgb(122, 124, 121);
+}
 
+    button.negative:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+    div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+    background: black;
+    color: rgb(0, 0, 0);
+    padding: 25px;
+}
 
 </style>
-
-
-
 </head>
 <body>
-    
-
-<section>
-<h1>0</h1>
-<button class="positive"onclick="add()">+</button>
-<button class="negative"onclick="sub()">-</button>
+    <body>
+            <h1>Contador</h1>
+            </h1><p id="variante">0</p>
+            <button onclick="aumentar()"> <h1>+</h1> </button>
+            <button onclick="diminuir()"> <h1>-</h1></button>
 </section>
 <script>
-
-const h1 =
-document.queryselector("h1")
-const div =
-document.queryselector("div")
-
-let numero = 0
-
-
-
-
-
-
-
-
+let numero = 0;
+    
+    function aumentar() {
+                numero = numero +1;
+                refresh();
+}    
+    function diminuir() {
+                numero = numero -1;
+                refresh();
+}
+    function refresh() {
+                const p = document.querySelector("#variante");
+                p.innerText = numero;
+                console.log (numero);
+}
 </script>
-
-
-
-
-
-
 </body>
-</html>
